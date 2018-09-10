@@ -188,29 +188,65 @@
 }
 
 /********/
+.App h2{
+    color: #fd7622;
+}
+.panel-body{
+    border: crimson;
+}
+
+.panel-body label{
+    float: left;
+    margin-left: 5%;
+}
 
 
+.nav-tabs{
+    width: 100%;
+    height: auto;
+}
 
+.nav-tabs-li{
+    background-color: gainsboro;
+    width: 50%;
+    height: auto;
+}
 
+.active {
+
+}
+.nav-tabs-li{
+    font-color: black;
+}
+
+.form-group{
+    position: relative;
+}
 
 .signForm {
     width: 100%;
     background-color: #CCCCCC;
     border-radius: 5px;
     padding: 20px;
+    margin-left: 23px;
 }
 
 .formField {
-    width: 100%;
-    padding: 12px 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    padding: 10px 20px;
     display: block;
-    border: 1px solid #fd7622;
+    border: 1px solid #d9d9d9;
     border-radius: 3px;
     box-sizing: border-box;
 }
+.formField:focus {
+    box-shadow: 0px 0em 4px #c4c4c4;
+}
 
 .myButton {
-    width: 100%;
+    width: 95%;
     background-color: #fd7622;
     color: white;
     padding: 14px 20px;
@@ -232,9 +268,22 @@
     border: 1px solid #fd7622;
 }
 
+.col{
+    padding-top: 15px;
+}
+
+.span-left{
+    float: left;
+    padding-left: 30px;
+}
+
+.span-right{
+    float: right;
+    padding-right: 30px;
+}
 
 .container{
-    height: 540px;
+    min-height: 540px;
     margin-top: 20px;
     position: relative;
 }

@@ -1,12 +1,11 @@
 import React, {Component} from 'react'
-import creationComptePro from '../pro/creactionComptePro'
 import {
     BrowserRouter as Router,
     Route,
     Link
 } from 'react-router-dom'
 
-class creationComptePart extends React.Component {
+class connexion extends React.Component {
     constructor(props) {
         super(props);
 
@@ -21,23 +20,15 @@ class creationComptePart extends React.Component {
         let errors = {};
         let formIsValid = true;
 
-        //Name
-        if (!fields["usr_username"]) {
-            formIsValid = false;
-            errors["usr_username"] = "*Nom Obligatoire";
-        }
-
-        if (typeof fields["usr_username"] !== "undefined") {
-            if (!fields["usr_username"].match(/^[a-zA-Z]+$/)) {
-                formIsValid = false;
-                errors["usr_username"] = "seulement des lettres";
-            }
-        }
-
         //Email
         if (!fields["usr_email"]) {
             formIsValid = false;
-            errors["usr_email"] = "*email est obligatoire";
+            errors["usr_email"] = "*email ou nom d'utilisateur est obligatoire";
+        }
+        //password
+        if (!fields["usr_pwd"]) {
+            formIsValid = false;
+            errors["usr_pwd"] = "*mot de passe obligatoire";
         }
 
         if (typeof fields["usr_email"] !== "undefined") {
@@ -74,25 +65,14 @@ class creationComptePart extends React.Component {
     render() {
         return (
             <div className="App">
-                <h2>Créer Votre Compte</h2>
-                <p>En créant un compte, vous pouvez publier, consulter et accéder à plusieurs annonces.
-                Vous pouvez aussi modifier ou supprimer vos annonces.</p>
+                <h2>Connecter-vous à votre Compte</h2>
+                <p>Accéder à votre compte pour publier vos annonces. Modifier ou supprimer vos annonces pour les metter à jour</p>
                 <div className="panel-warning  panel">
-                    <ul class="nav nav-tabs">
-                        <li className="active nav-tabs-li"><Link to='#'><b>Particulier</b></Link></li>
-                        <li className="nav-tabs-li"><Link to='/compte/pro/creationComptePro'>Professionnel</Link></li>
-                    </ul>
                     <br/>
                     <div className="panel-body">
                         <form ref="signForm" className="form-group"
                               onSubmit={this.enregistrerSubmit.bind(this)}>
                             <fieldset>
-                                <label for="nom">Nom</label>
-                                <span style={{color: "red"}}>{this.state.errors["usr_username"]}</span>
-                                <input ref="usr_username" type="text" placeholder="nom d'utilisateur"
-                                       onChange={this.handleChange.bind(this, "usr_username")}
-                                       value={this.state.fields["usr_username"]}
-                                       className="formField"/><br/>
                                 <label for="email">Adresse mail</label>
                                 <span style={{color: "red"}}>{this.state.errors["usr_email"]}</span>
                                 <input ref="usr_email" type="text" placeholder="Email"
@@ -100,27 +80,19 @@ class creationComptePart extends React.Component {
                                        value={this.state.fields["usr_email"]}
                                        className="formField"/><br/>
                                 <label for="password">Mot de passe</label>
+                                <span style={{color: "red"}}>{this.state.errors["usr_pwd"]}</span>
                                 <input ref="usr_pwd" type="password" placeholder="mot de passe"
                                        onChange={this.handleChange.bind(this, "usr_pwd")}
                                        value={this.state.fields["usr_pwd"]}
                                        className="formField"/>
                                 <br/>
-                                <label for="confirm_password">Confirmer mot de passe</label>
-                                <input ref="usr_pwd" type="password" placeholder="confirmer mot de passe"
-                                       onChange={this.handleChange.bind(this, "usr_repwd")}
-                                       value={this.state.fields["usr_repwd"]}
-                                       className="formField"/>
-                                <br/>
-                                <input name="" value="true" class="" type="checkbox"/>
-                                <span>  « Je souhaite recevoir mensuellement les affiches récentes</span>
-                                <br/>
-                                <input name="" value="true" class="" type="checkbox"/>
-                                <span>  « J'accepte les<a><strong>Termes et Conditions Générales de vente »</strong></a></span>
+                                <span className="span-left"><a><strong>Vous n'avez pas du compte?</strong></a></span>
+                                <span className="span-right"><a><strong>Mot de passe oublié</strong></a></span>
                             </fieldset>
                             <div className="col-md-12">
                                 <fieldset>
                                     <button className="btn btn-lg pro myButton" id="submit"
-                                            value="Submit">Valider
+                                            value="Submit">Connexion
                                     </button>
                                 </fieldset>
                             </div>
@@ -133,4 +105,4 @@ class creationComptePart extends React.Component {
     }
 }
 
-export default creationComptePart;
+export default connexion;

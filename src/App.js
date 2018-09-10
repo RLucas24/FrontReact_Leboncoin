@@ -5,11 +5,15 @@ import './App.css'
 import './assets/css/bootstrap.css'
 import './assets/css/bootstrap.min.css'
 import './assets/js/style'
+
+import A from './assets/images/A.png';
+
 import Drawer from 'react-motion-drawer'
 import Form from './components/Form'
 import creationComptePart from './components/compte/part/creationComptePart'
 import creationComptePro from './components/compte/pro/creactionComptePro'
-import PersonList from "./components/PersonList"
+import connexion from './components/compte/connexion'
+import AnnoncesList from "./components/annonce/AnnoncesList"
 import PersistentDrawer from "./components/PersistentDrawer"
 
 import {
@@ -47,37 +51,15 @@ class App extends Component {
                             <div className="kl-top-header-block">
                                 <ul className="kl-login nav nav-pills">
                                     <li>
-                                        <Link className="kl-btn-inscrire" to='#' onClick={this.onOpenModal}>S'incrire
-                                            <span
-                                                class="glyphicon glyphicon-log-in"></span></Link>
-                                        {/*Modal/>*/}
-                                        <Modal open={open} onClose={this.onCloseModal} center>
-                                            <div class="panel panel-warning">
-                                                <div class="panel-heading">
-                                                    <h2 class="panel-title">Création de compte</h2>
-                                                </div>
-                                                <div class="panel-body">
-                                                    <h5 class="panel-title">Choisissez votre type de compte</h5>
-                                                    <div className="panel-body">
-                                                        <Link to='/compte/part/creationComptePart'
-                                                              onClick={this.onCloseModal}>
-                                                            <span class="btn btn-warning kl-panel-modal-left">Particulier</span>
-                                                        </Link>
-                                                        <Link to='/compte/pro/creationComptePro'
-                                                              onClick={this.onCloseModal}>
-                                                            <span class="btn btn-warning kl-panel-modal-right">Professionnel</span>
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </Modal>
+                                        <Link className="kl-btn-inscrire" to='/compte/part/creationComptePart'>S'incrire <span
+                                            class="glyphicon glyphicon-user"></span></Link>
                                     </li>
                                     <li>
                                         <p className="kl-btn-separate">|</p>
                                     </li>
                                     <li>
-                                        <Link className="kl-btn-connecter" to='/creationComptePro'>Se connnecter <span
-                                            class="glyphicon glyphicon-user"></span></Link>
+                                        <Link className="kl-btn-connecter" to='/compte/connexion'>Se connnecter <span
+                                            class="glyphicon glyphicon-log-in"></span></Link>
                                     </li>
                                 </ul>
                             </div>
@@ -93,9 +75,9 @@ class App extends Component {
                                     </Link>
                                 </div>
                                 <ul className="nav nav-pills kl-menu-center">
-                                    <li><Link className="kl-li-center" to='/Form'>OFFRES</Link></li>
-                                    <li><Link className="kl-li-center" to='/PersonList'>DEMANDES</Link></li>
-                                    <li><Link className="kl-li-center" to='/yahoo'>MEILLEURS ANNONCES</Link></li>
+                                    <li><Link className="kl-li-center" to='/AnnoncesList'>OFFRES</Link></li>
+                                    <li><Link className="kl-li-center" to='/'>DEMANDES</Link></li>
+                                    <li><Link className="kl-li-center" to='/Form'>MEILLEURS ANNONCES</Link></li>
                                 </ul>
                                 <div className="kl-menu-right"><p><Link className="kl-depose-annonce"
                                                                         to='/Deposer_annonce'><b>DEPOSER
@@ -108,20 +90,14 @@ class App extends Component {
 
                     {/*CONTAINER/>*/}
                     <div className="container">
-
-                        <div>
-                            <div>
-
-                            </div>
-                        </div>
-
                         {/*URL/>*/}
 
+                        <Route exact path='/annonce/AnnoncesList' component={AnnoncesList}/>
+                        <Route exact path='/Form' component={Form}/>
+                        <Route exact path='/compte/part/creationComptePart' component={creationComptePart}/>
+                        <Route exact path='/compte/pro/creationComptePro' component={creationComptePro}/>
+                        <Route exact path='/compte/connexion' component={connexion}/>
 
-                        <Route path='/Form' component={Form}/>
-                        <Route path='/compte/part/creationComptePart' component={creationComptePart}/>
-                        <Route path='/compte/pro/creationComptePro' component={creationComptePro}/>
-                        <Route path='/PersonList' component={PersonList}/>
                     </div>
 
 

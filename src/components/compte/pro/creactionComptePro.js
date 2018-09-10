@@ -1,4 +1,9 @@
 import React, {Component} from 'react'
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from 'react-router-dom'
 
 class creationComptePro extends React.Component {
     constructor(props) {
@@ -65,47 +70,97 @@ class creationComptePro extends React.Component {
         this.setState({fields});
     }
 
-
     render() {
         return (
-            <div className="App panel panel-warning">
+            <div className="App">
+                <h2>Créer Votre Compte</h2>
+                <p>En créant un compte, vous pouvez publier, consulter et accéder à plusieurs annonces.
+                    Vous pouvez aussi modifier ou supprimer vos annonces.</p>
+                <div className="panel-warning  panel">
+                    <ul class="nav nav-tabs">
+                        <li className="nav-tabs-li"><Link to='/compte/part/creationComptePart'>Particulier</Link></li>
+                        <li className="active nav-tabs-li"><Link to='#'><b>Professionnel</b></Link></li>
+                    </ul>
+                    <br/>
+                    <div className="panel-body">
+                        <form ref="signForm" className="form-group"
+                              onSubmit={this.enregistrerSubmit.bind(this)}>
+                            <fieldset>
 
-                <div className="panel-body">
-                    <h2>Créez votre Compte Professionnel</h2>
-                </div>
-                <form ref="signForm" name="signForm" className="form-group"
-                      onSubmit={this.enregistrerSubmit.bind(this)}>
-                    <fieldset>
-                        <input ref="usr_username" type="text" placeholder="nom d'utilisateur"
-                               onChange={this.handleChange.bind(this, "usr_username")} value={this.state.fields["usr_username"]}
-                               className="formField"/><br/>
-                        <span style={{color: "red"}}>{this.state.errors["usr_username"]}</span>
-                        <br/>
-                        <input ref="usr_email" type="text" placeholder="Email"
-                               onChange={this.handleChange.bind(this, "usr_email")} value={this.state.fields["usr_email"]}
-                               className="formField"/><br/>
-                        <span style={{color: "red"}}>{this.state.errors["usr_email"]}</span>
-                        <br/>
-                        <input ref="usr_pwd" type="password" placeholder="mot de passe"
-                               onChange={this.handleChange.bind(this, "usr_pwd")} value={this.state.fields["usr_pwd"]}
-                               className="formField"/>
-                        <br/><br/>
-                        <input ref="usr_pwd" type="password" placeholder="confirmer mot de passe"
-                               onChange={this.handleChange.bind(this, "usr_repwd")} value={this.state.fields["usr_repwd"]}
-                               className="formField"/>
-                        <br/>
-                        <input name="cgv" value="true" id="cgv" class="" data-qa-id="checkbox-cgv" data-reactid="125" type="checkbox" />
-                        <span data-reactid="126">« J'accepte les<a data-reactid="129"><strong data-reactid="130">Conditions Générales de leboncoin »</strong></a></span>
-                    </fieldset>
-                    <div className="col-md-12">
-                        <fieldset>
-                            <button className="btn btn-lg pro myButton" id="submit"
-                                    value="Submit">Crée mon compte Professionnel
-                            </button>
-                        </fieldset>
+                                <label for="nom">Civiliter</label>
+                                <br/>
+                                <input name="" value="true" type="checkbox"/>
+                                <span> Mr</span>
+                                <input name="" value="true" type="checkbox"/>
+                                <span> Mme</span>
+                                <input name="" value="true" type="checkbox"/>
+                                <span> Mlle</span>
+
+                                <div class="form-row">
+                                    <div class="col col-sm-6">
+                                        <label for="nom">Nom</label><span
+                                        style={{color: "red"}}>{this.state.errors["usr_username"]}</span>
+                                        <input type="text" class="formField mb-2" placeholder="Nom"/>
+                                    </div>
+                                    <div class="col col-sm-6">
+                                        <label for="prenom">Prénom</label>
+                                        <input type="text" class="formField  mb-2" placeholder="Prénom"/>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col col-sm-6">
+                                        <label for="nom">Nom de la Société</label>
+                                        <input type="text" class="formField mb-2" placeholder="Nom de la Société"/>
+                                    </div>
+                                    <div class="col col-sm-6">
+                                        <label for="prenom">Adresse de la Société</label>
+                                        <input type="text" class="formField  mb-2" placeholder="Adresse de la Société"/>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col col-sm-6">
+                                        <label for="nom">Numéro STAT</label>
+                                        <input type="text" class="formField mb-2" placeholder="Numero STAT"/>
+                                    </div>
+                                    <div class="col col-sm-6">
+                                        <label for="prenom">Téléphone de la Société</label>
+                                        <input type="text" class="formField  mb-2"
+                                               placeholder="Téléphone de la Société"/>
+                                    </div>
+                                </div>
+                                <label for="email" className="col">Adresse mail<span
+                                    style={{color: "red"}}>  {this.state.errors["usr_email"]}</span></label>
+                                <input ref="usr_email" type="text" placeholder="Email"
+                                       onChange={this.handleChange.bind(this, "usr_email")}
+                                       value={this.state.fields["usr_email"]}
+                                       className="formField"/><br/>
+                                <label for="password">Mot de passe</label>
+                                <input ref="usr_pwd" type="password" placeholder="mot de passe"
+                                       onChange={this.handleChange.bind(this, "usr_pwd")}
+                                       value={this.state.fields["usr_pwd"]}
+                                       className="formField"/>
+                                <br/>
+                                <label for="confirm_password">Confirmer mot de passe</label>
+                                <input ref="usr_pwd" type="password" placeholder="confirmer mot de passe"
+                                       onChange={this.handleChange.bind(this, "usr_repwd")}
+                                       value={this.state.fields["usr_repwd"]}
+                                       className="formField"/>
+                                <br/>
+                                <input name="" value="true" type="checkbox"/>
+                                <span>  « J'accepte les<a><strong>Termes et Conditions Générales de vente »</strong></a></span>
+                            </fieldset>
+                            <div className="col-md-12">
+                                <fieldset>
+                                    <button className="btn btn-lg pro myButton" id="submit"
+                                            value="Submit">Valider
+                                    </button>
+                                </fieldset>
+                            </div>
+                        </form>
                     </div>
-                </form>
+                </div>
             </div>
+
         )
     }
 }
