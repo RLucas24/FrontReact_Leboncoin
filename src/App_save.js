@@ -14,17 +14,16 @@ import rechercheGlobales from './components/accueil/rechercheGlobales'
 import creationComptePart from './components/compte/part/creationComptePart'
 import creationComptePro from './components/compte/pro/creactionComptePro'
 import connexion from './components/compte/connexion'
-
+import list from "./components/list"
 import deposerAnnonce from './components/annonce/deposerAnnonce'
 import emailConfirmation from './components/compte/emailConfirmation'
 import compteConfirmer from './components/compte/compteConfirmer'
 import Form from './components/Form'
-import demandes from './components/annonce/demandes'
-import offres from './components/annonce/offres'
+import PersistentDrawer from './components/PersistentDrawer'
+import listeDemandes from './components/annonce/listeDemandes'
 
 
 import testEssey from './components/TestEssey'
-import pagination from './components/pagination'
 
 
 import {
@@ -104,41 +103,79 @@ class App extends Component {
                             <div className="kl-top-header-block">
                             </div>
                         </div>
+                        <Navbar collapseOnSelect className="Navbar-collapse">
+                            <Navbar.Header className="Navbar-header">
+                                <Navbar.Brand>
+                                    <a href="#brand"><h2 className="kl-menu-left">Maresaka</h2></a>
+                                </Navbar.Brand>
+                                <Navbar.Toggle/>
+                            </Navbar.Header>
+                            <Navbar.Collapse className="cccc">
+                                <Nav className="centre-Navbar">
+                                    <ul className="nav nav-pills kl-menu-center">
+                                        <li><Link className="kl-li-center" to='/list'>OFFRES</Link></li>
+                                        <li><Link className="kl-li-center" to='/listeDemandes'>DEMANDES</Link></li>
+                                        <li><Link className="kl-depose-annonce" to='/annonce/deposerAnnonce'>
+                                            <b>DEPOSER UNE ANNONCE</b>
+                                        </Link>
+                                        </li>
+                                    </ul>
+                                </Nav>
+                                <Nav pullRight className="right-Navbar">
+                                    <NavItem>
+                                        {this.renderInscription()}
+                                    </NavItem>
+                                    <NavItem>{this.renderSeparater()}
+                                    </NavItem>
+                                    <NavItem>
+                                        <Link className="kl-btn-connecter" onClick={this.handleClick}
+                                              to='/compte/connexion'>{this.renderToggle()}
+                                        </Link>
+                                    </NavItem>
+                                </Nav>
+                            </Navbar.Collapse>
+                        </Navbar>
+                    </div>
+
+
+                    <div className="header">
+                        <div className="kl-top-header">
+                            <div className="kl-top-header-block">
+                            </div>
+                        </div>
                         <div class="kl-menu-header" id="myTopnav">
                             <div class="kl-menu-header-block">
-                                <Navbar collapseOnSelect className="Navbar-collapse">
-                                    <Navbar.Header className="Navbar-header">
-                                        <Navbar.Brand>
-                                            <a href="/"><h2 className="kl-menu-left">Maresaka</h2></a>
-                                        </Navbar.Brand>
-                                        <Navbar.Toggle/>
-                                    </Navbar.Header>
-                                    <Navbar.Collapse className="cccc">
-                                        <Nav className="centre-Navbar">
-                                            <ul className="nav nav-pills kl-menu-center">
-                                                <li><Link className="kl-li-center" to='/offres'>OFFRES</Link></li>
-                                                <li><Link className="kl-li-center" to='/demandes'>DEMANDES</Link>
-                                                </li>
-                                                <li><Link className="kl-depose-annonce" to='/annonce/deposerAnnonce'>
-                                                    <b>DEPOSER UNE ANNONCE</b>
-                                                </Link>
-                                                </li>
-                                            </ul>
-                                        </Nav>
-                                        <Nav pullRight className="right-Navbar">
-                                            <NavItem>
-                                                {this.renderInscription()}
-                                            </NavItem>
-                                            <NavItem>{this.renderSeparater()}
-                                            </NavItem>
-                                            <NavItem>
-                                                <Link className="kl-btn-connecter" onClick={this.handleClick}
-                                                      to='/compte/connexion'>{this.renderToggle()}
-                                                </Link>
-                                            </NavItem>
-                                        </Nav>
-                                    </Navbar.Collapse>
-                                </Navbar>
+                                <div class="drawer-persiste">
+                                    <PersistentDrawer/>
+                                </div>
+                                <div>
+                                    <Link to='/'>
+                                        <h2 className="">Maresaka</h2>
+                                    </Link>
+                                </div>
+                                <div>
+                                    <ul className="nav nav-pills kl-menu-center">
+                                        <li><Link className="kl-li-center" to='/list'>OFFRES</Link></li>
+                                        <li><Link className="kl-li-center" to='/listeDemandes'>DEMANDES</Link></li>
+                                        <li><Link className="kl-depose-annonce" to='/annonce/deposerAnnonce'>
+                                            <b>DEPOSER UNE ANNONCE</b>
+                                        </Link>
+                                        </li>
+                                    </ul>
+                                    <ul className="kl-login nav nav-pills">
+                                        <li>
+                                            {this.renderInscription()}
+                                        </li>
+                                        <li>
+                                            {this.renderSeparater()}
+                                        </li>
+                                        <li>
+                                            <Link className="kl-btn-connecter" onClick={this.handleClick}
+                                                  to='/compte/connexion'>{this.renderToggle()}
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -149,19 +186,12 @@ class App extends Component {
                         <Route exact path='/' component={accueil}/>
                         <Route exact path='/annonces/:catgorie' component={rechercheGlobales}/>
 
-                        {/*Liste Demandes*/}
-                        <Route exact path='/demandes' component={demandes}/>
-                        <Route exact path='/demandesPro' component={demandes}/>
-                        <Route exact path='/demandesPart' component={demandes}/>
-
-                        {/*Liste Offres*/}
-                        <Route exact path='/offres' component={offres}/>
-                        <Route exact path='/offresPro' component={offres}/>
-                        <Route exact path='/offresPart' component={offres}/>
+                        <Route exact path='/listeDemandes' component={listeDemandes}/>
 
                         <div className="container">
                             {/*URL/>*/}
                             {this.renderRedirect()}
+                            <Route exact path='/list' component={list}/>
                             <Route exact path='/Form' component={Form}/>
                             {/*<Route exact path={'/annonce/deposerAnnonce/:API_Key'} component={deposerAnnonce}/>*/}
                             <Route exact path={'/annonce/deposerAnnonce'} component={deposerAnnonce}/>
@@ -173,7 +203,6 @@ class App extends Component {
                             <Route exact path='/compte/compteConfirmer' component={compteConfirmer}/>
 
                             <Route exact path='/testEssey' component={testEssey}/>
-                            <Route exact path='/pagination' component={pagination}/>
                         </div>
                     </div>
 
@@ -183,9 +212,6 @@ class App extends Component {
                         <div className="footer-block">
                             <Link to='/testEssey'>
                                 FANAOVANA TEST
-                            </Link>
-                            <Link to='/pagination'>
-                                PAGINATIONS
                             </Link>
                             <Link to='/'>
                                 <div className="kl-maresak">Maresaka</div>
@@ -293,10 +319,11 @@ class ParametreProfil extends React.Component {
 
     render() {
         return (
-                <div onMouseLeave={this.handleLeave}>
-                    <label onMouseEnter={this.handleHover}><span class="glyphicon glyphicon-cog">&nbsp;</span>Mon
-                        Compte<br />{this.state.showAboutMenu && <Submenu/>}</label>
-                </div>
+            <div onMouseLeave={this.handleLeave}>
+                {this.state.showAboutMenu && <Submenu/>}
+                <label><span class="glyphicon glyphicon-cog" onMouseEnter={this.handleHover}>&nbsp;</span>Mon
+                    Compte</label>
+            </div>
         )
     }
 }

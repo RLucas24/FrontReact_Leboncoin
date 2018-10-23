@@ -74,26 +74,26 @@ class Form extends React.Component {
                 </div>
                 <form ref="signForm" name="signForm" className="form-group"
                       onSubmit={this.contactSubmit.bind(this)}>
-                        <fieldset>
-                            <input ref="name" type="text" placeholder="Name"
-                                   onChange={this.handleChange.bind(this, "name")} value={this.state.fields["name"]}
-                                   className="formField"/><br/>
-                            <span style={{color: "red"}}>{this.state.errors["name"]}</span>
-                            <br/>
-                            <input ref="email" type="text" placeholder="Email"
-                                   onChange={this.handleChange.bind(this, "email")} value={this.state.fields["email"]}
-                                   className="formField"/><br/>
-                            <span style={{color: "red"}}>{this.state.errors["email"]}</span>
-                            <br/>
-                            <input ref="phone" type="text" placeholder="Phone"
-                                   onChange={this.handleChange.bind(this, "phone")} value={this.state.fields["phone"]}
-                                   className="formField"/>
-                            <br/><br/>
-                            <input ref="address" type="text" placeholder="Address"
-                                   onChange={this.handleChange.bind(this, "addresse")}
-                                   value={this.state.fields["address"]} className="formField"/>
-                            <br/>
-                        </fieldset>
+                    <fieldset>
+                        <input ref="name" type="text" placeholder="Name"
+                               onChange={this.handleChange.bind(this, "name")} value={this.state.fields["name"]}
+                               className="formField"/><br/>
+                        <span style={{color: "red"}}>{this.state.errors["name"]}</span>
+                        <br/>
+                        <input ref="email" type="text" placeholder="Email"
+                               onChange={this.handleChange.bind(this, "email")} value={this.state.fields["email"]}
+                               className="formField"/><br/>
+                        <span style={{color: "red"}}>{this.state.errors["email"]}</span>
+                        <br/>
+                        <input ref="phone" type="text" placeholder="Phone"
+                               onChange={this.handleChange.bind(this, "phone")} value={this.state.fields["phone"]}
+                               className="formField"/>
+                        <br/><br/>
+                        <input ref="address" type="text" placeholder="Address"
+                               onChange={this.handleChange.bind(this, "addresse")}
+                               value={this.state.fields["address"]} className="formField"/>
+                        <br/>
+                    </fieldset>
                     <div className="col-md-12">
                         <fieldset>
                             <button className="btn btn-lg pro myButton" id="submit"

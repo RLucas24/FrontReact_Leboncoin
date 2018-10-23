@@ -1,26 +1,78 @@
 
-.App {
-    margin: auto;
-    width: 50%;
+/* **********************  Header ************************************ */
+.div-adresse{
+    margin-left: 14px;
+    word-wrap: break-word;
 }
 
+.nav-tabs-input-right {
+    margin-left: 62%;
+    margin-right: 5%;
+    width: 39%;
+    padding: 5px 27px;
+    margin-top: 4px;
+    display: block;
+    border: solid 1px #fd7622;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #fd7622;
+    text-align: center;
+}
+
+.nav-tabs-input-right:focus {
+    box-shadow: 0px 0em 4px #fd7622;
+}
+
+.nav-tabs-li-right{
+    width: 64%;
+}
+
+
+Submenu{
+    background-color: red;
+}
+
+.cccc{
+    /*background-color: #843534;*/
+    padding: 0px;
+    padding-left: 16%;
+}
+.Navbar-collapse{
+    background-color: white;
+    float: left;
+    width: 100%;
+    color: #0f0f0f;
+    height: auto;
+    margin: auto;
+    box-shadow: 1.2px 1.2px 5px #5e5e5e;
+}
+
+.right-Navbar{
+    margin-right: 0px;
+    float: right;
+    margin-left: 30px;
+    padding-left: 90px;
+}
+.centre-Navbar{
+    margin-left: 12%;
+}
 .header {
     margin-top: 0;
-}
-.container{
-    margin-top: 20px;
+    background-color: white;
 }
 
 /*Header top*/
 .kl-top-header {
     background-color: #0f0f0f;
-    height: 40px;
+    height: 4px;
 }
+
 .kl-top-header-block{
-    width: 90%;
+    width: 80%;
     height: 100%;
     background-color: transparent;
     margin: auto;
+    /*background-color: red;*/
 }
 
 @media screen and (max-width: 600px) {
@@ -30,16 +82,398 @@
     }
 }
 
+.kl-menu-center{
+}
+
+/*Header menu*/
+.kl-menu-header {
+    color: #0f0f0f;
+    height: auto;
+    margin: auto;
+    box-shadow: 1.2px 1.2px 5px #5e5e5e;
+}
+
+
+.kl-menu-header-block{
+    width: 100%;
+    background-color: red;
+}
+
+@media screen and (max-width: 600px) {
+    .kl-menu-header{
+        width: 100%;
+        height: auto;
+        min-height: 70px;
+        display: flex;
+    }
+}
+
+.kl-menu-header-block{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    margin: auto;
+}
+
+.kl-menu-left{
+    margin-top: 0px;
+    color: #fd7622;
+    font-family: Vivaldi;
+    position: absolute;
+    top: 0px;
+}
+
+@media screen and (max-width: 600px) {
+    .kl-menu-header-block{
+        width: 100%;
+        height: auto;
+        min-height: 70px;
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .drawer-persiste{
+        display: none;
+    }
+}
+
+.kl-menu-right{
+    margin-right: 0;
+}
+
+
+
+
+
+.kl-login {
+    float: right;
+    background-color: #1b6d85;
+}
+
 /*Btn connection et inscription*/
 .kl-btn-separate {
-    color: white;
+    color: black;
     padding-top: 8px;
 }
 
 .kl-btn-connecter, .kl-btn-inscrire {
-    background-color: #0f0f0f;
+    background-color: white;
+    color: #0f0f0f;
+}
+
+
+/* ********************************** */
+
+
+
+
+ImagesUploader{
+    float: left;
+}
+.nav-tabs:active{
+    color: #fd7622;
+}
+
+.info_suplementaire{
+    line-height: 20pt;
+    float: bottom;
+}
+
+.titre_global{
+    height: 30px;
+}
+
+.kl-tel_annonce{
+    word-wrap: break-word;
+}
+
+.text_global{
+    height: 134px;
+    word-wrap: break-word;
+}
+
+.prix_global{
+    height: 20px;
+}
+
+.center_annonces_global{
+border-right: solid 2px gainsboro;
+}
+
+.center_annonces_global .prix_global{
+    float: bottom;
+}
+
+.prix_global{
+    bottom: 0px;
+    float: bottom;
+    margin-bottom: 0px;
+}
+
+.label_org{
+    color:  #fd7622;
+}
+.hr_global{
+    border: solid 1px gainsboro;
+}
+.theme{
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    color: white;
+    padding: 0 12px;
+    background-color: #fd7622;
+    text-transform: uppercase;
+}
+
+
+.col_sous_global{
+    padding: 0px;
+    position: relative;
+}
+.row_sous_global{
+    margin-left: 0px!important;
+    margin-right: 0px!important;
+    box-shadow: 0px 0px 4px 2px gainsboro;
+    border-radius: 2px;
+    position: relative;
+    width: 100%;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.checked_radio_typeAnnonce{
+    padding-left: 15px;
+}
+.custom-title-panel{
+    text-align: center;
+}
+
+.thumbnail{
+    width: 300px;
+    height: 304px;
+}
+
+.thumbnail img{
+    width: 300px;
+    height: 202px;
+    object-fit: cover;
+}
+
+.thumbnail_global{
+    width: 200px;
+    height: 200px;
+}
+
+.thumbnail_global img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.message{
+    color: red;
+}
+.popover-ul{
+    width: 170px!important;
+    float:right;
+    padding-top: 2px!important;
+    margin-top: 2px!important;
+}
+
+.Popover{
+    padding-top: 20px!important;
+}
+
+.chargement{
+    height: 20px;
+}
+
+.testMety {
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    background: #fd7622;
+    border: 8px solid white;
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+
+.jumbotron p{
+    font-size: 18px;
+}
+.jumbotron li{
+    font-size: 14px;
+}
+
+.nombre_petit_annonce, .dernier_annonce{
+    color: #fd7622;
+}
+
+.caption{
+    height: 70px;
+    margin-bottom: 5px;
+}
+
+.prix{
+    color: #fd7622;
+}
+
+.description {
+    color: gray;
+}
+
+.bloc-carousel{
+    padding-top: 10px;
+    background-color: #E6E6E6;
+    min-height: 280px;
+}
+
+.kl-carousel {
+    background: transparent;
+    width: 80%;
+    margin-left: 10%;
+    height: 100%;
+    /*padding-top: 15px;*/
+}
+
+
+.glyphicon-search{
     color: white;
 }
+
+.bloc-recherche{
+    background-color: #333333;
+    height: 120px;
+    padding-top: 10px;
+}
+
+.kl-top-recherche {
+    width: 80%;
+    margin-left: 10%;
+    height: 120px;
+    padding-top: 10px;
+}
+
+.bloc-bottom-recherche{
+    background-color: white;
+    height: 30px;
+}
+
+.kl-bottom-recherche {
+    width: 80%;
+    margin-left: 10%;
+    height: 120px;
+    background: transparent;
+}
+
+
+.kl-middle-recherche-block{
+    margin: auto;
+    width: 100%;
+    padding-left: 12%;
+    padding-top: 15px;
+}
+
+.kl-top-recherche-block{
+    color: white;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+
+    text-align: center;
+}
+
+
+@media screen and (max-width: 700px) {
+    .kl-top-recherche{
+        width: 100%;
+        height: auto;
+    }
+    .bloc-recherche{
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+.row-bloc-accueil{
+    width: 80%;
+    margin-left: 10%;
+    height: auto;
+    margin-top: 10px;
+}
+
+
+.formField_res_icon {
+    color: black;
+    margin-left: 4%;
+    width: 100%;
+    padding: 7px 20px;
+    display: block;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px 0px 0px 4px;
+    box-sizing: border-box;
+    float: right;
+}
+
+.formField_res {
+    color: black;
+    margin-left: 4%;
+    margin-right: 4%;
+    width: 100%;
+    padding: 7px 20px;
+    display: block;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-sizing: border-box;
+    float: right;
+}
+
+
+.formField_res_icon:focus {
+    box-shadow: inset 0px 0em 3px 1px #c4c4c4;
+}
+.formField_res:focus {
+    box-shadow: inset 0px 0em 3px 1px #c4c4c4;
+}
+
+
+
+
+
+.body{
+    background-color: #FCFDFD;
+}
+
+.App {
+    margin: auto;
+    width: 50%;
+}
+
+
+
+
+
+
+
+.text-flot-lef{
+    float: left;
+    padding-left: 5%;
+}
+
+.exiger{
+    color: red;
+}
+
+
+
+
 
 /*Modal*/
 .kl-panel-modal-center{
@@ -57,52 +491,7 @@
 /********/
 
 
-.kl-login {
-    float: right;
-}
 
-/*Header menu*/
-.kl-menu-header {
-    color: #0f0f0f;
-    height: auto;
-    margin: auto;
-    box-shadow: 2px 2px 2px #5e5e5e;
-}
-
-.kl-menu-header li {
-    color: #0f0f0f;
-    margin-top: 18px;
-    margin-bottom: 10px;
-    margin-left: 60px;
-}
-
-@media screen and (max-width: 600px) {
-    .kl-menu-header{
-        width: 100%;
-        height: auto;
-        min-height: 70px;
-        margin-top: 18px;
-        display: flex;
-    }
-}
-
-.kl-menu-header-block{
-    display: flex;
-    justify-content: space-around;
-    width: 92%;
-    height: 100%;
-    background-color: transparent;
-    margin: auto;
-}
-
-@media screen and (max-width: 600px) {
-    .kl-menu-header-block{
-        width: 100%;
-        height: auto;
-        min-height: 70px;
-        display: flex;
-    }
-}
 
 .kl-miniDrawer{
     background-color: #5cb85c;
@@ -110,10 +499,6 @@
     height: 40px;
 }
 
-.kl-menu-left{
-    color: #fd7622;
-    font-family: Vivaldi;
-}
 
 .kl-li-center{
     color: #0f0f0f;
@@ -122,6 +507,7 @@
 
 .kl-depose-annonce{
     color: white;
+    background-color: #264653;
     margin-left: 10px;
 }
 
@@ -131,40 +517,9 @@
 }
 
 
-@media screen and (min-width: 800px) {
-    .drawer-persiste{
-        display: none;
-    }
-}
 
-.kl-menu-right{
-    margin-right: 0;
-}
 
-@media screen and (max-width: 600px) {
-    .kl-menu-right, .kl-menu-center{
-        display: none;
-    }
-    .kl-menu-left{
-        position: relative;
-        margin:auto;
-    }
-
-    .drawer-persiste{
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .kl-menu-center{
-        display: none;
-    }
-    .kl-menu-left{
-        position: relative;
-        margin:auto;
-        margin-top: 18px;
-    }
-}
-
+/**
 .kl-menu-right p:hover{
     color: #0f0f0f;
     background-color: #fd7622;
@@ -182,17 +537,18 @@
     margin-top: 16px;
     margin-left: 80px;
 }
-
+**/
 .kl-li-right {
     float: right;
 }
 
-/********/
+/****form inscription, connection et annonce****/
 .App h2{
     color: #fd7622;
 }
 .panel-body{
-    border: crimson;
+    border: #fd7622;
+    box-shadow: 2px 2px 2px gainsboro;
 }
 
 .panel-body label{
@@ -200,24 +556,35 @@
     margin-left: 5%;
 }
 
-
-.nav-tabs{
+.nav-menu-compte{
     width: 100%;
     height: auto;
 }
 
-.nav-tabs-li{
+.nav-menu-compte-li{
     background-color: gainsboro;
     width: 50%;
     height: auto;
 }
 
-.active {
-
-}
-.nav-tabs-li{
+.nav-menu-compte-li{
     font-color: black;
 }
+
+
+
+
+.custom-header-panel{
+    background-color: #fd7622 !important;
+    border-color: #fd7622 !important;
+    color: white !important;
+    width: 100%;
+}
+
+.panel-title{
+
+}
+
 
 .form-group{
     position: relative;
@@ -231,23 +598,87 @@
     margin-left: 23px;
 }
 
-.formField {
+.input-group{
     margin-left: 5%;
     margin-right: 5%;
     width: 90%;
-    padding: 10px 20px;
+}
+.formField_ar {
+    width: 100%;
+    padding: 8px 20px;
     display: block;
     border: 1px solid #d9d9d9;
     border-radius: 3px;
     box-sizing: border-box;
 }
+
+.formField {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    padding: 8px 20px;
+    display: block;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.formField_ar:focus {
+    box-shadow: 0px 0em 4px #c4c4c4;
+}
 .formField:focus {
     box-shadow: 0px 0em 4px #c4c4c4;
 }
 
+
+.input-group-addon-recherche{
+    background-color: #fd7622;
+}
+.input-group-addon-recherche i{
+    margin-left: 3px;
+}
+
+
+/** Pagination **/
+#page-numbers {
+    list-style: none;
+    display: flex;
+}
+
+#page-numbers > li {
+    margin-right: 0.3em;
+    color: blue;
+    user-select: none;
+    cursor: pointer;
+}
+
+/** Pagination **/
+
 .myButton {
     width: 95%;
     background-color: #fd7622;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.my-btn-valider {
+    width: 30%;
+    background-color: #fd7622;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.my-btn-annuler {
+    width: 30%;
+    background-color: gainsboro;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -279,15 +710,27 @@
 
 .span-right{
     float: right;
-    padding-right: 30px;
+    padding-right: 25px;
+}
+
+.container_accueil{
+    margin-top: 0;
+    min-height: 540px;
 }
 
 .container{
-    min-height: 540px;
     margin-top: 20px;
     position: relative;
 }
 
+.div-checkbox{
+    text-align: left;
+    margin-left: 5%;
+}
+
+.checkbox_notif, .checkbox_condition{
+    float: left;
+}
 
 /*Footer*/
 
@@ -302,7 +745,7 @@
 }
 
 .footer-block{
-    width: 90%;
+    width: 80%;
     height: auto;
     background: transparent;
     margin: auto;
@@ -320,7 +763,7 @@
     width: 100%;
     height: auto;
 
-    text-align: center;
+    /*text-align: center;*/
     color: #fd7622;
     font-family: Vivaldi;
     font-size: 24px;
